@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           _mainBackground(),
           _curveImage(),
+          _circleImage(),
         ],
       ),
     );
@@ -40,7 +41,11 @@ class _HomePageState extends State<HomePage> {
 
   _mainBackground() {
     return Positioned(
+      bottom: 10,
+      left: 0,
       child: Container(
+        height: 280,
+        width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -57,13 +62,30 @@ class _HomePageState extends State<HomePage> {
       right: 0,
       bottom: 0,
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.1,
+        height: MediaQuery.of(context).size.height * 0.5,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/curve.png"),
+            fit: BoxFit.fill,
           ),
         ),
       ),
     );
   }
+}
+
+_circleImage() {
+  return Positioned(
+    right: 15,
+    bottom: 0,
+    child: Container(
+      height: 150,
+      width: 150,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/circle.png"),
+        ),
+      ),
+    ),
+  );
 }
