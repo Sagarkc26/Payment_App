@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:payment_app/Colors/colors.dart';
 
 class ContainerLogo extends StatelessWidget {
   const ContainerLogo({Key? key}) : super(key: key);
@@ -11,6 +10,7 @@ class ContainerLogo extends StatelessWidget {
       child: Row(
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -35,17 +35,40 @@ class ContainerLogo extends StatelessWidget {
                     width: 10,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
                         "S.K. Tech",
                         style: TextStyle(
-                          fontSize: 14,
-                        ),
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 10,
+                        height: 10,
+                      ),
+                      Text(
+                        "id:978sy15",
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 16,
+              ),
+              const Text(
+                "iconssssss",
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline),
+                maxLines: 1,
+                softWrap: false,
+                overflow: TextOverflow.clip,
+              )
             ],
           ),
         ],
