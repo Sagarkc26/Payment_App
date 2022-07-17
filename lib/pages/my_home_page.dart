@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/Colors/colors.dart';
+import 'package:payment_app/pages/container.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           children: [
             _headSection(),
+            _listBills(),
           ],
         ),
       ),
@@ -72,20 +74,45 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-}
 
-_circleImage() {
-  return Positioned(
-    right: 15,
-    bottom: 0,
-    child: Container(
-      height: 150,
-      width: 150,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/circle.png"),
+  _circleImage() {
+    return Positioned(
+      right: 15,
+      bottom: 0,
+      child: Container(
+        height: 150,
+        width: 150,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/circle.png"),
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
+
+  _listBills() {
+    return Positioned(
+      top: 310,
+      child: Container(
+        height: 120,
+        width: MediaQuery.of(context).size.width - 30,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
+          boxShadow: [
+            BoxShadow(
+                color: Color(0xFFd8dbe0),
+                offset: Offset(1, 1),
+                blurRadius: 20,
+                spreadRadius: 10),
+          ],
+        ),
+        child: const ContainerLogo(),
+      ),
+    );
+  }
 }
