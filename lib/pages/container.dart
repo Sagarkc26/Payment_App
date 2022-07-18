@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:payment_app/Colors/colors.dart';
+import 'package:payment_app/widgets/sizesbox.dart';
 
 class ContainerLogo extends StatelessWidget {
   const ContainerLogo({Key? key}) : super(key: key);
@@ -10,7 +12,7 @@ class ContainerLogo extends StatelessWidget {
       child: Row(
         children: [
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
@@ -55,20 +57,32 @@ class ContainerLogo extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedText(
+                  text: ("Auto pay on 21th july 2024"), color: AppColor.green),
               const SizedBox(
-                height: 16,
-              ),
-              const Text(
-                "iconssssss",
-                style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    decoration: TextDecoration.underline),
-                maxLines: 1,
-                softWrap: false,
-                overflow: TextOverflow.clip,
+                height: 5,
               )
+            ],
+          ),
+          Row(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    width: 80,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                        bottomRight: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
+                      ),
+                      color: AppColor.selectBackground,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ],
