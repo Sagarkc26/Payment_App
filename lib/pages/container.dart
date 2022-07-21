@@ -85,10 +85,13 @@ class ContainerLogo extends StatelessWidget {
                       child: Text(
                         "select",
                         style: TextStyle(
-                            fontSize: 16, color: AppColor.selectColor),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColor.selectColor),
                       ),
                     ),
                   ),
+                  Expanded(child: Container()),
                   Text(
                     "\$2014.05",
                     style: TextStyle(fontSize: 16, color: AppColor.selectColor),
@@ -97,8 +100,21 @@ class ContainerLogo extends StatelessWidget {
                     "Due in 3 days",
                     style: TextStyle(fontSize: 16, color: AppColor.selectColor),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  )
                 ],
               ),
+              Container(
+                height: 35,
+                width: 5,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20),
+                  ),
+                ),
+              )
             ],
           ),
         ],
