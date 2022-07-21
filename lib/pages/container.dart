@@ -10,6 +10,7 @@ class ContainerLogo extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 10, left: 10),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,6 +81,21 @@ class ContainerLogo extends StatelessWidget {
                       ),
                       color: AppColor.selectBackground,
                     ),
+                    child: Center(
+                      child: Text(
+                        "select",
+                        style: TextStyle(
+                            fontSize: 16, color: AppColor.selectColor),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    "\$2014.05",
+                    style: TextStyle(fontSize: 16, color: AppColor.selectColor),
+                  ),
+                  Text(
+                    "Due in 3 days",
+                    style: TextStyle(fontSize: 16, color: AppColor.selectColor),
                   ),
                 ],
               ),
