@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/Colors/colors.dart';
 import 'package:payment_app/pages/container.dart';
+import 'package:payment_app/widgets/large_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             _headSection(),
             _listBills(),
+            _payButton(),
           ],
         ),
       ),
@@ -112,6 +114,15 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         child: const ContainerLogo(),
+      ),
+    );
+  }
+
+  _payButton() {
+    return const Positioned(
+      bottom: 10,
+      child: AppLargeButton(
+        text: "Pay all bills",
       ),
     );
   }

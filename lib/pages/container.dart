@@ -94,22 +94,29 @@ class ContainerLogo extends StatelessWidget {
                   Expanded(child: Container()),
                   Text(
                     "\$2014.05",
-                    style: TextStyle(fontSize: 16, color: AppColor.selectColor),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.selectColor),
                   ),
                   Text(
                     "Due in 3 days",
-                    style: TextStyle(fontSize: 16, color: AppColor.selectColor),
+                    style: TextStyle(fontSize: 13, color: AppColor.halfOval),
                   ),
                   const SizedBox(
                     height: 10,
                   )
                 ],
               ),
+              const SizedBox(
+                width: 5,
+              ),
               Container(
                 height: 35,
                 width: 5,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                decoration: BoxDecoration(
+                  color: AppColor.halfOval,
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
                   ),
