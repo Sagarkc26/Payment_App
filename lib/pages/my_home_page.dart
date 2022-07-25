@@ -79,14 +79,29 @@ class _HomePageState extends State<HomePage> {
 
   _circleImage() {
     return Positioned(
-      right: 0,
+      right: -8,
       bottom: -40,
-      child: Container(
-        height: 200,
-        width: 200,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/circle.png"),
+      child: GestureDetector(
+        onTap: () {
+          showModalBottomSheet<dynamic>(
+            isScrollControlled: true,
+            barrierColor: Colors.transparent,
+            backgroundColor: Colors.grey.withOpacity(0.5),
+            context: context,
+            builder: (BuildContext bc) {
+              return Container(
+                height: MediaQuery.of(context).size.height - 220,
+              );
+            },
+          );
+        },
+        child: Container(
+          height: 200,
+          width: 200,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/circle.png"),
+            ),
           ),
         ),
       ),
