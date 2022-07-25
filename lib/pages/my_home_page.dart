@@ -79,11 +79,11 @@ class _HomePageState extends State<HomePage> {
 
   _circleImage() {
     return Positioned(
-      right: 15,
-      bottom: 0,
+      right: 0,
+      bottom: -40,
       child: Container(
-        height: 150,
-        width: 150,
+        height: 200,
+        width: 200,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/circle.png"),
