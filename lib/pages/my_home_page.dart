@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/Colors/colors.dart';
 import 'package:payment_app/pages/container.dart';
+import 'package:payment_app/widgets/button.dart';
 import 'package:payment_app/widgets/large_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -86,11 +87,44 @@ class _HomePageState extends State<HomePage> {
           showModalBottomSheet<dynamic>(
             isScrollControlled: true,
             barrierColor: Colors.transparent,
-            backgroundColor: Colors.grey.withOpacity(0.5),
+            backgroundColor: Colors.transparent,
             context: context,
             builder: (BuildContext bc) {
               return Container(
-                height: MediaQuery.of(context).size.height - 220,
+                height: MediaQuery.of(context).size.height - 210,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      bottom: 0,
+                      child: Container(
+                        color: Colors.grey.withOpacity(0.5),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height - 290,
+                      ),
+                    ),
+                    Positioned(
+                      right: 56,
+                      child: Container(
+                        width: 70,
+                        height: 230,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(40),
+                        ),
+                        child: Column(
+                          children: [
+                            AppButton(
+                              icon: Icons.cancel,
+                              ontap: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
           );
